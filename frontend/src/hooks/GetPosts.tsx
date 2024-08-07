@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { PostElementComp, PostElementObject, postsInterface } from "../components/PostElement";
-import axios, { Axios } from "axios";
+import { postsInterface } from "../components/PostElement";
+import axios from "axios";
 
 type AxiosReturnType = {
     userposts:{

@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { PostElementComp, postsInterface } from "./PostElement";
-import { useGetPosts } from "../hooks/GetPosts";
 import axios from "axios";
 
 type AxiosReturnType = {

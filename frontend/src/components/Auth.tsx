@@ -79,6 +79,7 @@ export const Auth = () => {
                         <div className="mt-8">
                             <button className="w-full bg-blue-600 rounded-md text-white" onClick={SignUpCall}>SignIn</button>
                         </div>
+                        {message.length > 0 ? <div>{message}</div>:null}
                     </div>  
                 </div>    
             </div>

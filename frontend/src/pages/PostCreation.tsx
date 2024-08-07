@@ -29,7 +29,7 @@ function Creation(){
         body:"",
         tags:[]
     });
-    const [TagArr,message] = useGetTags();
+    const {tags,message} = useGetTags();
     const [isCreated,SetCreated] = useState<string>("");
     
     async function Post(){
@@ -56,7 +56,7 @@ function Creation(){
             <input type="text" placeholder="add title .." onChange={(e) => SetPostInputs((t) => ({...t,title:e.target.value}))}></input>
             <input type="text" placeholder="add body ..." onChange={(e) => SetPostInputs((t) => ({...t,body:e.target.value}))}></input>
             <div>
-                {message.length > 0 ? <div>{message as string}</div> : <div>{(TagArr as TagArray[]).map((t,index) => 
+                {message.length > 0 ? <div>{message as string}</div> : <div>{(tags as TagArray[]).map((t,index) => 
                  <div key={index}>
                     <TagComponent tag={t.tag}></TagComponent>
                     <button onClick={() => SetPostInputs((x) => ({...x,tags:[...x.tags,t.tag]}))}>Add</button>

@@ -1,7 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { TagReturnType } from "../hooks/GetTags";
-import { useMemo, useRef } from "react";
-import { Link } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { PostsRenderComponent } from "../components/PostsRender";
 
 export function Dashboard(){
@@ -17,17 +14,17 @@ export function Dashboard(){
 
 
 
-function AppBarDashboard({type}:{type:string}){
-    const navigation = useNavigate();
-    function GoToSpecificPosts(){
-      navigation('/PostsView');
-    }
-    return(
-      <div>
-        <button onClick={GoToSpecificPosts}>SpecificPosts</button>
-      </div>
-    )
-}
+// function AppBarDashboard({type}:{type:string}){
+//     const navigation = useNavigate();
+//     function GoToSpecificPosts(){
+//       navigation('/PostsView');
+//     }
+//     return(
+//       <div>
+//         <button onClick={GoToSpecificPosts}>SpecificPosts</button>
+//       </div>
+//     )
+// }
 
 
 
