@@ -66,7 +66,7 @@ export function PostElementComp({post,username}:{post:postsInterface,username:st
       <div className="flex justify-center">
         <div>
           <div className="mt-4 flex">
-            <div className="rounded-full w-6 h-6 bg-yellow-300 text-gray-500 flex justify-center">{username.charAt(0)}</div>
+            <div className="rounded-full w-6 h-6 bg-gray-300 text-gray-500 flex justify-center">{username.charAt(0)}</div>
             <span className="ml-3 mr-3 font-semibold text-gray-800 ">{username}</span>
             <span className="font-thin">{date.current}</span>
           </div>

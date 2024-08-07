@@ -1,6 +1,6 @@
 import axios, { Axios } from "axios";
 import { useEffect, useRef, useState } from "react";
-import { ErrorMessage } from "../hooks.tsx/CheckSignIn";
+import { ErrorMessage } from "../hooks/CheckSignIn";
 
 interface AxiosReturnType {
     id:number;

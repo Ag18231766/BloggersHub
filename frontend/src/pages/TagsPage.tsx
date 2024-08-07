@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useGetTags } from "../hooks.tsx/GetTags";
+import { useGetTags } from "../hooks/GetTags";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

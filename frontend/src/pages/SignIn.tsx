@@ -60,7 +60,7 @@ export function SignIn(){
                 </div>
                 <div>
                   <div className="mt-8">
-                    <button className="w-full bg-blue-600 rounded-md text-white" onClick={SignUpCall}>SignIn</button>
+                    <button className="w-full bg-blue-600 rounded-md text-white" onClick={SignInCall}>SignIn</button>
                   </div>
                 </div>
               </div>

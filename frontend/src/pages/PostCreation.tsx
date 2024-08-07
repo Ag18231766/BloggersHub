@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import {  useState } from "react";
-import { TagArray, useGetTags } from "../hooks.tsx/GetTags";
+import { TagArray, useGetTags } from "../hooks/GetTags";
 
 
 interface PostInputsCreation{

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { TagReturnType } from "../hooks.tsx/GetTags";
+import { TagReturnType } from "../hooks/GetTags";
 import { useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { PostsRenderComponent } from "../components/PostsRender";
