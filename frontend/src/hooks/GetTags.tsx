@@ -35,6 +35,6 @@ export function useGetTags():{tags:TagArray[] , message:string}{
         }catch(err){
             console.log(err);
         }
-    },[])
+    },[message])
     return {tags:TagArr,message:message};
 }

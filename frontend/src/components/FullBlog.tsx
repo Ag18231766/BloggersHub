@@ -1,0 +1,40 @@
+import { postsInterface } from "./PostElement"
+
+export const FullBlog = ({ blog }: {blog: postsInterface}) => {
+    return <div>
+        <div className="flex justify-center">
+            <div className="grid grid-cols-12 px-10 w-full pt-200 max-w-screen-xl pt-12">
+                <div className="col-span-8">
+                    <div className="text-5xl font-extrabold">
+                        {blog.title}
+                    </div>
+                    <div className="text-slate-500 pt-2">
+                        Post on 2nd December 2023
+                    </div>
+                    <div className="pt-4">
+                        {blog.body}
+                    </div>
+                </div>
+                <div className="col-span-4">
+                    <div className="text-slate-600 text-lg">
+                        Author
+                    </div>
+                    <div className="flex w-full">
+                        <div className="pr-4 flex flex-col justify-center">
+                        <div className="rounded-full w-6 h-6 bg-gray-300 text-gray-500 flex justify-center">{blog.user.username.charAt(0)}</div>
+                        </div>
+                        <div>
+                            <div className="text-xl font-bold">
+                                {blog.user.username || "Anonymous"}
+                            </div>
+                            {/* <div className="pt-2 text-slate-500">
+                                Random catch phrase about the author's ability to grab the user's attention
+                            </div> */}
+                        </div>
+                    </div>  
+                </div>
+                
+            </div>
+        </div>
+    </div>
+}

@@ -31,7 +31,6 @@ export function useGetPosts():UseGetPostsReturnType{
             if('message' in response.data){
                 SetMessage(() => (response.data as ErrorMessage).message);
             }else{
-                
                 SetPostElement((t) => ({username:(response.data as AxiosReturnType).userposts.username,posts:[...(t.posts),...(response.data as AxiosReturnType).userposts.posts]}));
             }
         }).catch((err) => {

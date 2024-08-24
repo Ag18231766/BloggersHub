@@ -1,26 +1,19 @@
-import { useNavigate } from "react-router-dom";
+import { PostsRenderComponent } from "../components/PostsRender";
+import { useCheckSignIn } from "../hooks/CheckSignIn";
+import { Navbar } from "../components/Navbar";
+
+
 
 export function Landing(){
-    return (
-        <div>
-            <AppBarLanding></AppBarLanding>
-            Landing
-        </div>
-    )
-}
-function AppBarLanding(){
-    const navigation = useNavigate();
+  const IsSignIn = useCheckSignIn();
+
+
   
-    function GoToSpecificPosts(){
-      navigation('/PostsView');
-    }
-    function GoToSignIn(){
-      navigation('/SignIn');
-    }
-    return(
-      <div>
-        <button onClick={GoToSpecificPosts}>PostsView</button>
-        <button onClick={GoToSignIn}>SignIn</button>
-      </div>
-    )
-  }
+  return (
+        <div>
+            {IsSignIn ? <div><Navbar></Navbar>
+              <PostsRenderComponent></PostsRenderComponent></div> : null}
+           
+        </div>
+  )  
+}

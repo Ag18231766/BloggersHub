@@ -1,28 +1,35 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
-export function useCheckSignIn():[boolean,string]{
+export function useCheckSignIn():[boolean]{
+
+    // why anyone has to check for signin multiple times (this should be cached)
     const [isSignIn,SetSignIn] = useState<boolean>(false);
-    const username = useRef<string>("");
+    console.log('hello')
+  
     const navigation = useNavigate();
 
     useEffect(() => {
-        axios.post<Token | ErrorMessage>('http://localhost:3000/api/v1/users/signin',"",{
-            headers:{
-                authheader : localStorage.getItem("token")
-            }
-        }).then((response) => {
-            if('token' in response.data){
-                username.current = (response.data as Token).username;
-                SetSignIn(true);
-            }else{
+            axios.post<Token | ErrorMessage>('http://localhost:5000/api/v1/users/signin',"",{
+                headers:{
+                    authheader : 'Bearer ' + localStorage.getItem("token")
+                }
+            }).then((response) => {
+                if('token' in response.data){
+                    sessionStorage.setItem('username',(response.data as Token).username.charAt(0));
+                    console.log('hi');
+                    SetSignIn(true);
+                }else{
+                    navigation('/SignIn');
+                }
+            }).catch((err) => {
+                console.log(err);
                 navigation('/SignIn');
-            }
-        })
-    },[])
-    return [isSignIn,username.current];
+            })
+    },[navigation])
+    return [isSignIn];
 }
 
 
