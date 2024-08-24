@@ -36,7 +36,7 @@ export const PostCreation = () => {
                 <h1 className="font-extrabold mb-3">Tags</h1>
                 <div className="overflow-x-auto h-36">
                     
-                  {message.length > 0 ? <div>{message as string}</div> : <div>{(tags as TagArray[]).map((t,index) => 
+                  {message.length > 0 ? <div>{message as string}</div> : <div className="border-gray-50">{(tags as TagArray[]).map((t,index) => 
                         <div  key={index} >
                             <button onClick={() => SetPostInputs((x) => {
                                 const SelectedTags = PostInputs.tags.filter((z) => z !== t.tag);
