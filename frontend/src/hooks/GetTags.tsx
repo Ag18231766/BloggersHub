@@ -15,7 +15,7 @@ export function useGetTags():{tags:TagArray[] , message:string}{
     const [message,Setmessage] = useState<string>("");
     useEffect(() => {
         try{
-            axios.get<TagReturnType | ErrorMessage>('http://localhost:5000/api/v1/tags/tag',{
+            axios.get<TagReturnType | ErrorMessage>('https://mediumclone-production.up.railway.app/api/v1/tags/tag',{
                 headers:{
                     authheader: 'Bearer ' + localStorage.getItem('token')
                 }

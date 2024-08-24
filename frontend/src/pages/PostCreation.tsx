@@ -52,7 +52,7 @@ export const PostCreation = () => {
                     </div>}
                 </div>
                 <button onClick={async () => {
-                    const response = await axios.post('http://localhost:5000/api/v1/posts/', PostInputs, {
+                    const response = await axios.post('https://mediumclone-production.up.railway.app/api/v1/posts/', PostInputs, {
                         headers: {
                             authheader: 'Bearer ' + localStorage.getItem("token")
                         }

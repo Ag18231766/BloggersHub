@@ -9,7 +9,7 @@ export default function useBlog({id}:{id:string}){
     const [blog,Setblog] = useState<postsInterface>();
 
     useEffect(() => {
-        axios.get<{post:postsInterface}>(`http://localhost:5000/api/v1/posts/${id}`,{
+        axios.get<{post:postsInterface}>(`https://mediumclone-production.up.railway.app/api/v1/posts/${id}`,{
             headers: {
                 authheader: 'Bearer ' + localStorage.getItem('token')
             }

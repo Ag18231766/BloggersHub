@@ -7,7 +7,7 @@ export function TagRender({tags}:{tags:TagArray[]}){
     const [tagSelected,SetSeletedTag] = useState<string[]>([]);
 
     async function Send(){
-        const response = await axios.put<{message:string}>('http://localhost:5000/api/v1/users/postTags',{tagArr:tagSelected},{
+        const response = await axios.put<{message:string}>('https://mediumclone-production.up.railway.app/api/v1/users/postTags',{tagArr:tagSelected},{
             headers: {
                 authheader : 'Bearer ' + localStorage.getItem('token')
             } 
