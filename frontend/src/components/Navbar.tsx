@@ -9,7 +9,7 @@ export function Navbar(){
         navigation('/');
     }
     function GoToPostCreation(){
-        navigation(`/PostCreation/:${localStorage.getItem('username')}`)
+        navigation(`/PostCreation/${sessionStorage.getItem('username')}`)
     }
     function GoToSignIn(){
         navigation('/SignIn');
