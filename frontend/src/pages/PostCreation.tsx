@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useNavigate, useSearchParams } from "react-router-dom";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ChangeEvent, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { TagArray, useGetTags } from "../hooks/GetTags";
 
