@@ -124,9 +124,9 @@ export function PostsRenderComponent({title}:OptionalProps) {
             return (
                 <div className="flex justify-center mt-4">
                     <div className="w-4/6">
-                        {PostElement.map((t) => (
-                            <div key={t.id}>
-                                <PostElementComp post={t} />
+                        {PostElement.map((t,index) => (
+                            <div key={index}>
+                                <PostElementComp post={t} key={index} />
                             </div>
                         ))}
                     </div>

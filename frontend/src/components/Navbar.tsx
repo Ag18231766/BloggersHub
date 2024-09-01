@@ -9,7 +9,7 @@ export function Navbar(){
         navigation('/');
     }
     function GoToPostCreation(){
-        navigation('/PostCreation')
+        navigation(`/PostCreation/:${localStorage.getItem('username')}`)
     }
     function GoToSignIn(){
         navigation('/SignIn');
@@ -91,7 +91,7 @@ export function CustomInput({isMobSearch}:{isMobSearch:boolean}){
         navigation(`/search/?title=${title}`)
     }
     return (
-        <input className={`${!isMobSearch ? "hidden" : null} ml-2 md:block text-black border-2`} type="text" placeholder="search here" onKeyDown={(e) => {
+        <input className={`${!isMobSearch ? "hidden" : null} ml-2 md:block text-black rounded-sm outline-none`} type="text" placeholder="search other posts.." onKeyDown={(e) => {
             if(e.key === 'Enter'){
                 Render(title);
             }

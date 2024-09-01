@@ -66,7 +66,7 @@ export function PostElementComp({post}:{post:postsInterface}){
   const secondPart:string = array.current.slice(lowerbound.current + 1,upperbound.current).join(" ");
   return (
     <Link to={`/${post.id}`}>
-      <div  className="w-full h-36 bg-gray-100 border-b border-gray-400">
+      <div  className="w-full h-36  border-b border-gray-400">
         
         <div className="flex justify-start pl-7">
           <div>
