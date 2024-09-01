@@ -20,7 +20,8 @@ export const Auth = () => {
                 SetMessage(() => (response.data as {message:string}).message);
             }else{
                 localStorage.setItem("token",response.data.token);
-                navigation("/AddInterests");
+                
+                navigation("/");
             }
         } catch (error) {
             console.error('Request error:', error);

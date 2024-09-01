@@ -23,7 +23,8 @@ function App() {
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/Search" element={<SearchBar></SearchBar>}></Route>
         <Route path="/" element={<Landing></Landing>}></Route>
-        <Route path="/PostCreation" element={<PostCreation></PostCreation>}></Route>
+        <Route path="/PostCreation/:username/:id" element={<PostCreation></PostCreation>}></Route>
+        <Route path="/PostCreation/:username/:id/?edit" element={<PostCreation></PostCreation>}></Route>
         <Route path="/Search/?title" element={<SearchBar></SearchBar>}></Route>
         <Route path="/MobSearch" element={<MobSearch></MobSearch>}></Route>
         <Route path="/:id" element={<Blog></Blog>}></Route>

@@ -1,8 +1,6 @@
-
-
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { ChangeEvent, useState } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { TagArray, useGetTags } from "../hooks/GetTags";
 
@@ -19,11 +17,14 @@ export const PostCreation = () => {
         body:"",
         tags:[]
     });
+    
+    
     const {tags,message} = useGetTags();
     const navigate = useNavigate();
 
     return <div>
         <Navbar />
+        <input id="inputId"></input>
         <div className="flex justify-center w-full pt-8"> 
             <div className="max-w-screen-lg w-full">
                 <input onChange={(e) => {
@@ -36,7 +37,7 @@ export const PostCreation = () => {
                 <h1 className="font-extrabold mb-3">Tags</h1>
                 <div className="overflow-x-auto h-36">
                     
-                  {message.length > 0 ? <div>{message as string}</div> : <div className="border-gray-50">{(tags as TagArray[]).map((t,index) => 
+                  {message.length > 0 ? <div>{message as string}</div> : <div className="border">{(tags as TagArray[]).map((t,index) => 
                         <div  key={index} >
                             <button onClick={() => SetPostInputs((x) => {
                                 const SelectedTags = PostInputs.tags.filter((z) => z !== t.tag);

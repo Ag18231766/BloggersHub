@@ -20,25 +20,30 @@ export function Navbar(){
     function GoToMobSearch(){
         navigation('/MobSearch')
     }
+    function SignOut(){
+        localStorage.removeItem('token');
+        navigation('/SignIn');
+    }
     
     
     
     
     return(
-        <div className="flex justify-between bg-gray-600 p-5 text-white">
+        <div className="flex justify-between bg-yellow-500 p-5 text-white">
             {sessionStorage.length > 0 ?
-                <div className="bg-gray-600  md:hidden">
+                <div className="  md:hidden">
                 <label className="cursor-pointer">
                     {/* insert an icon */}
                     Collapse
                     <input className="peer scale-0" type="checkbox" />
-                    <div className="block max-h-1 overflow-hidden bg-gray-600 text-white  peer-checked:max-h-52 peer-checked:max-w-60">
+                    <div className="block max-h-1 overflow-hidden  text-white  peer-checked:max-h-52 peer-checked:max-w-60">
                         <p onClick={GoToMobSearch} className="cursor-pointer">Search</p>
                         <p onClick={GoToLanding} className="cursor-pointer">Landing</p>
+                        <p onClick={SignOut} className=" cursor-pointer">SignOut</p>
                     </div>    
                 </label>
             </div>:
-                <div className="bg-gray-600  md:hidden">
+                <div className="  md:hidden">
                     <label className="cursor-pointer">
                         {/* insert an icon */}
                         Collapse
@@ -55,10 +60,11 @@ export function Navbar(){
             <CustomInput isMobSearch={false}></CustomInput>
             <div className="hidden md:flex justify-between">
                 <div onClick={GoToLanding} className="mr-3 cursor-pointer">Landing</div>
-                <div onClick={GoToPostCreation} className="cursor-pointer">NewPost</div>                
+                <div onClick={GoToPostCreation} className="cursor-pointer">NewPost</div> 
+                <div onClick={SignOut} className="ml-3 cursor-pointer">SignOut</div>               
             </div>
             {sessionStorage.length > 0 ? 
-                <div className="w-8 h-8 rounded-full bg-black flex justify-center items-center">
+                <div className="w-8 h-8 rounded-full bg-gray-600 flex justify-center items-center">
                     <div className="text-white">{(sessionStorage.getItem('username') as string).charAt(0)}</div>
                 </div>
                 :
@@ -68,6 +74,8 @@ export function Navbar(){
                 </div>
                 
             }
+
+            
             
         </div>
         

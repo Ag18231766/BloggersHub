@@ -18,7 +18,7 @@ export function useCheckSignIn():[boolean]{
                 }
             }).then((response) => {
                 if('token' in response.data){
-                    sessionStorage.setItem('username',(response.data as Token).username.charAt(0));
+                    sessionStorage.setItem('username',(response.data as Token).username);
                     console.log('hi');
                     SetSignIn(true);
                 }else{
