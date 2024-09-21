@@ -29,13 +29,13 @@ export function PostsRenderComponent({title}:OptionalProps) {
             let response;
             
             if(title === undefined){
-                response = await axios.get(`https://mediumclone-production.up.railway.app/api/v1/posts/yourposts/${count}`, {
+                response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/yourposts/${count}`, {
                     headers: {
                         authheader: 'Bearer ' + localStorage.getItem('token')
                     }
                 });     
             }else{
-                response = await axios.get(`https://mediumclone-production.up.railway.app/api/v1/posts/allposts/?title=${title}&&count=${count}`, {
+                response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/allposts/?title=${title}&&count=${count}`, {
                     headers: {
                         authheader: 'Bearer ' + localStorage.getItem('token')
                     }
@@ -67,7 +67,7 @@ export function PostsRenderComponent({title}:OptionalProps) {
         console.log('default');
         if(title === undefined){
             console.log('your');
-            axios.get(`https://mediumclone-production.up.railway.app/api/v1/posts/yourposts/1`, {
+            axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/yourposts/1`, {
                 headers: {
                     authheader: 'Bearer ' + localStorage.getItem('token')
                 }
@@ -80,7 +80,7 @@ export function PostsRenderComponent({title}:OptionalProps) {
                 }
             });
         }else{
-            axios.get(`https://mediumclone-production.up.railway.app/api/v1/posts/allposts/?title=${title}&&count=1`, {
+            axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/allposts/?title=${title}&&count=1`, {
                 headers: {
                     authheader: 'Bearer ' + localStorage.getItem('token')
                 }

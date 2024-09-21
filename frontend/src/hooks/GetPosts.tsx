@@ -23,7 +23,7 @@ export function useGetPosts():UseGetPostsReturnType{
     const [message,SetMessage] = useState<string>("");
 
     useEffect(() => {
-        axios.get<AxiosReturnType | ErrorMessage>('https://mediumclone-production.up.railway.app/api/v1/posts/yourposts/1',{
+        axios.get<AxiosReturnType | ErrorMessage>(`${import.meta.env.VITE_BACKEND_URL}/api/v1/posts/yourposts/1`,{
             headers:{
                 authheader: 'Bearer ' + localStorage.getItem('token')
             }

@@ -13,7 +13,8 @@ export function SignIn(){
     const navigation = useNavigate();
 
     async function SignInCall(){
-      const response = await axios.post<{token:string} | {message:string}>('https://mediumclone-production.up.railway.app/api/v1/users/signinPassword',SignInInputs);
+      console.log(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/signinPassword`)
+      const response = await axios.post<{token:string} | {message:string}>(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/signinPassword`,SignInInputs);
       if('message' in response.data){
         console.log('hi');
         Setmessage(() => (response.data as {message:string}).message);

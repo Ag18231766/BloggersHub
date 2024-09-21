@@ -14,7 +14,7 @@ export const Auth = () => {
 
     async function SignUpCall(){
         try {
-            const response = await axios.post<{token:string} | {message:string}>('https://mediumclone-production.up.railway.app/api/v1/users/signup',SignUpInputs);
+            const response = await axios.post<{token:string} | {message:string}>(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/signup`,SignUpInputs);
         
             if ('message' in response.data) {
                 SetMessage(() => (response.data as {message:string}).message);

@@ -12,7 +12,7 @@ export function useCheckSignIn():[boolean]{
     const navigation = useNavigate();
 
     useEffect(() => {
-            axios.post<Token | ErrorMessage>('https://mediumclone-production.up.railway.app/api/v1/users/signin',"",{
+            axios.post<Token | ErrorMessage>(`${import.meta.env.VITE_BACKEND_URL}/api/v1/users/signin`,"",{
                 headers:{
                     authheader : 'Bearer ' + localStorage.getItem("token")
                 }
